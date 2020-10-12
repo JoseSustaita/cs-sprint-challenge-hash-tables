@@ -4,6 +4,19 @@ def has_negatives(a):
     """
     # Your code here
 
+    cache = {}
+    result = []
+
+    # Loop through nums
+    for nums in a:
+
+        #If in cache
+        if cache.get(abs(nums)):
+            if (cache.get(abs(nums)) + nums) == 0:
+                result.append(abs(nums))
+        else:
+            cache[abs(nums)] = nums
+
     return result
 
 
